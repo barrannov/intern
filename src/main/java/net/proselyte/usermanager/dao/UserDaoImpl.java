@@ -28,25 +28,11 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public void updateUser(User user) {
-      /*  Session session = this.sessionFactory.getCurrentSession();
-        session.persist(user);
-        logger.info("User" + user +
-                " update");*/
-        // Retrieve session from Hibernate
-        Session session = sessionFactory.getCurrentSession();
-
-// Retrieve existing user via id
-        User existingUser = (User) session.get(User.class, user.getId());
-
-// Assign updated values to this user
-        existingUser.setName(user.getName());
-        existingUser.setAge(user.getAge());
-        existingUser.setisAdmin(user.getisAdmin());
-
-// Save updates
-        session.save(existingUser);
+    Session session = this.sessionFactory.getCurrentSession();
+        session.update(user);
         logger.info("User" + user +
                 " update");
+       
     }
 
     @Override
