@@ -62,6 +62,7 @@
 <h1>User List</h1>
 
 
+<%--
 <c:if test="${!empty listUsers}">
   <display:table id="user" class="tg" name="listUsers" requestURI="/users" pagesize="10" >
   <display:column class="th" property="id" title="ID" />
@@ -79,10 +80,10 @@
   </display:column>
   </display:table>
 </c:if>
+--%>
 
 
 
-<%--
 <c:if test="${!empty listUsers}">
   <table class="tg">
     <tr>
@@ -109,7 +110,7 @@
     </c:forEach>
   </table>
 </c:if>
---%>
+
 
 
 

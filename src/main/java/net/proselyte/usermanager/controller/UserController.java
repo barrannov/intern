@@ -1,6 +1,7 @@
 package net.proselyte.usermanager.controller;
 
 
+
 import net.proselyte.usermanager.people.User;
 import net.proselyte.usermanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,11 @@ public class UserController {
         model.addAttribute("listUsers", this.userService.listUsers());
 
         return "users";
+    }
+    @RequestMapping("userdata/{id}")
+    public String bookData(@PathVariable("id") int id, Model model){
+        model.addAttribute("user", this.userService.getUserbyId(id));
+
+        return "userdata";
     }
 }

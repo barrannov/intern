@@ -15,7 +15,6 @@ public class User {
 private int id;
 
 @Column(name = "name")
-
 private String name;
 
     @Column(name = "age")
@@ -24,21 +23,9 @@ private String name;
     @Column(name = "isAdmin")
     private boolean isAdmin = false;
 
-    @Column(name = "createdDate")
     @Temporal(TemporalType.TIMESTAMP)
-    private java.util.Date createdDate;
-
-
-
-    public boolean getisAdmin() {
-        return isAdmin;
-    }
-
-    public void setisAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
-
+    @Column(name = "createdDate")
+    private Date createdDate;
 
     public int getId() {
         return id;
@@ -64,7 +51,13 @@ private String name;
         this.age = age;
     }
 
+    public boolean getisAdmin() {
+        return isAdmin;
+    }
 
+    public void setisAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
 
     public Date getCreatedDate() {
         return createdDate;
@@ -79,8 +72,8 @@ private String name;
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
-                ", isAdmin=" + isAdmin +
+                ", age=" + age + '\'' +
+                ", isAdmin=" + isAdmin + '\'' +
                 ", createdDate=" + createdDate +
                 '}';
     }
