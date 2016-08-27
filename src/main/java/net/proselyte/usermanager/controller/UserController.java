@@ -2,6 +2,7 @@ package net.proselyte.usermanager.controller;
 
 
 
+import net.proselyte.usermanager.people.SearchString;
 import net.proselyte.usermanager.people.User;
 import net.proselyte.usermanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -56,10 +59,14 @@ public class UserController {
 
         return "users";
     }
-    @RequestMapping("userdata/{id}")
-    public String bookData(@PathVariable("id") int id, Model model){
-        model.addAttribute("user", this.userService.getUserbyId(id));
 
-        return "userdata";
+
+    @RequestMapping("search")
+    public String searchString(@ModelAttribute("searchString") SearchString name, Model model) {
+
+        model.addAttribute("foundUsers", this.userService.getUserByName(name.getSearchName()));
+
+        return "search";
     }
+
 }

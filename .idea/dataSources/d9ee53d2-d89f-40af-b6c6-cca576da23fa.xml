@@ -12,22 +12,18 @@
     <table id="8" parent="1" name="users" />
     <column id="9" parent="8" name="ID">
       <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-      <sequence-identity>1</sequence-identity>
+      <data-type>int(8)|0</data-type>
     </column>
     <column id="10" parent="8" name="name">
-      <mandatory>1</mandatory>
       <data-type>varchar(25)|0</data-type>
     </column>
     <column id="11" parent="8" name="age">
-      <mandatory>1</mandatory>
-      <data-type>varchar(45)|0</data-type>
+      <data-type>int(11)|0</data-type>
     </column>
     <column id="12" parent="8" name="isAdmin">
       <data-type>bit(1)|0</data-type>
     </column>
     <column id="13" parent="8" name="createdDate">
-      <mandatory>1</mandatory>
       <data-type>timestamp|0</data-type>
       <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>

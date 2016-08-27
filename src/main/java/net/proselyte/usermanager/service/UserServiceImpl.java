@@ -44,4 +44,12 @@ this.userDao.removeUser(id);
     public List<User> listUsers() {
         return this.userDao.listUsers();
     }
+
+
+
+    @Override
+    @Transactional
+    public List<User> getUserByName(String name) {
+        return this.userDao.getUserByName(name);
+    }
 }

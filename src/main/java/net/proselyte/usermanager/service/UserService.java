@@ -14,4 +14,8 @@ public interface UserService {
  public  User getUserbyId(int id);
 
  public  List<User> listUsers();
+
+ public List<User> getUserByName(String name);
+
+
 }

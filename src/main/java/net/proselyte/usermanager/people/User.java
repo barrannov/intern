@@ -21,7 +21,7 @@ private String name;
     private int age;
 
     @Column(name = "isAdmin")
-    private boolean isAdmin = false;
+    private boolean isAdmin;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "createdDate")
@@ -63,7 +63,7 @@ private String name;
         return createdDate;
     }
 
-    public void setCreatedDate(Timestamp createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 

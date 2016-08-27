@@ -1,6 +1,7 @@
 package net.proselyte.usermanager.dao;
 
 import net.proselyte.usermanager.people.User;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -67,5 +68,16 @@ public class UserDaoImpl implements UserDao{
             logger.info("User list " + userList);
         }
         return userList;
+    }
+
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<User> getUserByName(String name) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("FROM User WHERE name = :name");
+        query.setParameter("name", name);
+        List<User> users = query.list();
+        return users;
     }
 }
