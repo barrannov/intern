@@ -34,14 +34,12 @@ public class UserDaoImpl implements UserDao{
         session.update(user);
         logger.info("User" + user +
                 " update");
-
-
     }
 
     @Override
     public void removeUser(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        User user = (User) session.load(User.class, new Integer(id));
+        User user = (User) session.load(User.class, id);
         if(user!=null){
             session.delete(user);
         }
@@ -52,7 +50,7 @@ public class UserDaoImpl implements UserDao{
     @Override
     public User getUserById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        User user = (User) session.load(User.class, new Integer(id));
+        User user = (User) session.load(User.class, id);
         logger.info("User" + user +
                 " recievd");
         return user;
@@ -63,7 +61,6 @@ public class UserDaoImpl implements UserDao{
     public List<User> listUsers() {
         Session session = this.sessionFactory.getCurrentSession();
         List<User> userList = session.createQuery("from User").list();
-
         for(User user : userList){
             logger.info("User list " + userList);
         }
@@ -81,3 +78,4 @@ public class UserDaoImpl implements UserDao{
         return users;
     }
 }
+
