@@ -74,7 +74,23 @@ html{
 <br/>
 
 <br/>
-
+<h1>Find User</h1>
+<c:url var="search" value="search"/>
+<form:form action="${search}" commandName="searchString">
+  <table>
+    <tr>
+      <td>
+        <jsp:text>Enter name: </jsp:text>
+      </td>
+      <td>
+        <form:input path="searchName"/>
+      </td>
+      <td>
+        <input type="submit" value="<spring:message text="Find user"/>"/>
+      </td>
+    </tr>
+  </table>
+</form:form>
 <h1>User List</h1>
 
 
