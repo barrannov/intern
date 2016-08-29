@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="FORINTERN:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="UserManger.war">
-      <element id="artifact" artifact-name="FORINTERN:war exploded" />
-    </root>
-  </artifact>
-</component>
